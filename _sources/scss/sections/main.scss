@@ -1,0 +1,91 @@
+#main {
+  width: 100%;
+
+  .wrap {
+    height: 100vh;
+    width: 100%;
+    background: url('images/bg_main.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: table;
+    padding-left: 10%;
+    box-sizing: border-box;
+  }
+}
+
+#main .video_button {
+  display: table-cell;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+#main header {
+  background: rgba($kaka, 0.9);
+  width: 350px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+
+  .logo {
+    background: url($sprite) no-repeat 0 -71px;
+    height: 36px;
+    width: 370px;
+    margin: auto;
+    zoom: 0.8;
+  }
+
+  @media (min-width: 750px) {
+    width: 420px;
+
+    .logo {
+      zoom: 1;
+    }
+  }
+}
+
+#main footer {
+  height: 37px;
+  margin-top: 5px;
+
+  .icon {
+    background: $kaka;
+    width: 37px;
+    height: 100%;
+    position: relative;
+    float: left;
+    transition: background 0.3s ease;
+
+    &::after {
+      content: ' ';
+      background: url($sprite) no-repeat -68px 0;
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .text {
+    background: $invert_kaka;
+    color: $kaka;
+    text-align: center;
+    text-transform: uppercase;
+    float: left;
+    padding: 11px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease;
+  }
+
+  &:hover {
+    .icon {
+      background: #7e3f1b;
+    }
+
+    .text {
+      background: #dfb963;
+    }
+  }
+}

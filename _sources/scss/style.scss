@@ -1,7 +1,18 @@
-@import 
+@import
   'sass/_susy.scss',
   'sections/reset.scss',
   'sections/mail';
+
+body {
+  background: #ccc;
+  min-width: 480px;
+  font-family: Lora, serif;
+}
+
+b {
+  font-weight: 700;
+}
+
 $susy: (
   columns: 12,
   gutters: 1/2,
@@ -9,17 +20,29 @@ $susy: (
   gutter-position: outside,
 );
 
-$container: 1170px;
+$container: 1560px;
+$container-mid: 1170px;
 $container-float: 100%;
 
-.container-float{
+$sprite: 'images/sprite.png';
+
+$gray_line: #e1e1e1;
+$dark_gray: #3c3c3c;
+$menu_elem: #72461b;
+$kaka: #774223;
+$invert_kaka: #d6b66d;
+
+.container-float {
   @include container($container-float);
 }
 
-.container{
-  @include container($container);
-}  
-
-.test{
-  @include span(6);	
+.container-mid {
+  @include container($container-mid);
 }
+
+.container {
+  @include container($container);
+}
+
+@import 'sections/nav';
+@import 'sections/main';
