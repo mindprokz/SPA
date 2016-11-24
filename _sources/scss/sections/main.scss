@@ -1,3 +1,20 @@
+@keyframes light {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #main {
   width: 100%;
 
@@ -88,4 +105,15 @@
       background: #dfb963;
     }
   }
+}
+
+#main .scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url($sprite) no-repeat -95px 0;
+  width: 21px;
+  height: 60px;
+  animation: light 1.5s ease-in-out infinite;
 }

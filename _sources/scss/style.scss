@@ -7,6 +7,7 @@ body {
   background: #ccc;
   min-width: 480px;
   font-family: Lora, serif;
+  box-sizing: border-box;
 }
 
 b {
@@ -46,3 +47,6 @@ $invert_kaka: #d6b66d;
 
 @import 'sections/nav';
 @import 'sections/main';
+@import 'sections/about';
+@import 'sections/services';
+@import 'sections/team';

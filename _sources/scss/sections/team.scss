@@ -1,0 +1,91 @@
+#team {
+  background: url('images/lists_flip.jpg') no-repeat left -3px, #fff;
+  padding-top: 30px;
+
+  .wrap {
+    max-width: 1170px;
+    margin: auto;
+  }
+}
+
+#team header {
+  position: relative;
+  overflow: hidden;
+  height: 85px;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+}
+
+#team ul {
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 35px;
+
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+#team ul li {
+  float: left;
+  height: 80px;
+  padding: 5px;
+  box-sizing: border-box;
+
+  .wrap {
+    border: 1px solid #d7b56d;
+    padding: 5px;
+
+    &::after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+  }
+
+  @media (min-width: 1px) {
+    width: 50%;
+  }
+
+  @media (min-width: 750px) {
+    width: 33.333%;
+  }
+
+  @media (min-width: 1170px) {
+    width: 25%;
+  }
+
+  .avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .text {
+    float: left;
+
+    h4 {
+      color: #9a9999;
+      font-size: 13px;
+      padding-bottom: 8px;
+      padding-top: 8px;
+    }
+
+    h5 {
+      color: $kaka;
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+}
