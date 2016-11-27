@@ -5,7 +5,8 @@
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=480px, maximum-scale=1">
+    <meta name="theme-color" content="#774223">
     <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
@@ -17,8 +18,8 @@
   </head>
   <body>
     <section id="menu">
-      <header>
-        <div class="logo"></div>
+      <header><a href="#main" class="anchor">
+          <div class="logo"></div></a>
         <div class="menu_opener"><span>Меню</span>
           <div class="burger"></div>
           <div class="back"></div>
@@ -37,10 +38,10 @@
           <div class="closer"></div>
           <div class="back"></div>
         </div>
-        <nav><a href="#">О нас</a><a href="#">Услуги</a><a href="#">Акции</a><a href="#">Интерьер</a><a href="#">Команда</a><a href="#">Партнеры</a><a href="#">Контакты</a></nav>
+        <nav><a href="#about" class="anchor">О нас</a><a href="#services" class="anchor">Услуги</a><a href="#stocks" class="anchor">Акции</a><a href="#interior" class="anchor">Интерьер</a><a href="#team" class="anchor">Команда</a><a href="#partners" class="anchor">Партнеры</a><a href="#contact" class="anchor">Контакты</a></nav>
       </footer>
     </section>
-    <sections id="main">
+    <section id="main"><a name="main"></a>
       <div class="wrap">
         <div class="video_button">
           <header>
@@ -53,8 +54,8 @@
         </div>
         <div class="scroll"></div>
       </div>
-    </sections>
-    <section id="about">
+    </section>
+    <section id="about"><a name="about"></a>
       <div class="row row_1">
         <div class="image"></div>
         <div class="text">
@@ -86,7 +87,7 @@
         </div>
       </div>
     </section>
-    <section id="services">
+    <section id="services"><a name="services"></a>
       <header><img src="images/header.png"></header>
       <section>
         <ul>
@@ -137,7 +138,30 @@
         </div>
       </footer>
     </section>
-    <section id="team">
+    <section id="interior"><a name="interior"></a>
+      <header><img src="images/header_interier.png"></header>
+      <div class="wrap"><a href="#" class="image_interior_wrap big">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior">
+            <div class="zoom"></div>
+          </div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a><a href="#" class="image_interior_wrap">
+          <div style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;" class="image_interior big"></div>
+          <div class="zoom"></div></a></div>
+    </section>
+    <section id="team"><a name="team"></a>
       <div class="wrap">
         <header><img src="images/header_team.png"></header>
         <ul>
@@ -180,8 +204,71 @@
         </ul>
       </div>
     </section>
+    <section id="brand"><a name="partners"></a>
+      <header><img src="images/header_brand.png"></header>
+      <ul>
+        <li><img src="images/test_logo.png"></li>
+        <li><img src="images/test_logo.png"></li>
+        <li><img src="images/test_logo.png"></li>
+        <li><img src="images/test_logo.png"></li>
+      </ul>
+    </section>
+    <section id="map"><a name="contact"></a>
+      <header class="contact">
+        <div class="contact_elem">
+          <h3>АДРЕС</h3>
+          <p>Астана, пр. Туран, 30, <br> клуб Fitness Palace</p>
+        </div>
+        <div class="contact_elem">
+          <h3>ТЕЛЕФОНЫ</h3>
+          <p>+7 (7172) 56-77-55 <br> +7 (701) 100-07-09</p>
+        </div>
+        <div class="contact_elem">
+          <h3>ВРЕМЯ РАБОТЫ</h3>
+          <p>09:00 – 21:00, без выходных</p>
+        </div>
+        <div class="contact_elem">
+          <h3>E-MAIL</h3>
+          <p>brand@celebrityspa.kz</p>
+        </div>
+      </header>
+      <div class="map_content">
+        <div id="map_block"></div>
+        <div class="triangle"></div><img src="images/map.jpg" class="photo">
+      </div>
+      <footer>
+        <div class="wrap">
+          <div class="copyright"><span><b>«Celebrity Spa»</b> — 2016</span></div>
+          <div class="mindpro"><a href="http://mindpro-group.com"><img src="images/mind_logo.png"></a></div>
+        </div>
+      </footer>
+    </section>
+    <section id="modal" style="display:none">
+      <div class="wrap open">
+        <div class="closer"></div>
+        <h3>CARITA</h3>
+        <div class="content">
+          <div class="image"><img src="images/test_modal.jpg"></div>
+          <p>Бренд носит имя своих основательниц, сестер Рози и Мари Карита, которые, благодаря новаторству в области создания имиджа и изысканному вкусу, в XX веке смогли объединить вокруг себя всю элиту Европы, Азии и Америки. Именно поэтому препараты данной марки часто называют косметикой кинозвезд, а Катрин Денев, Софи Марсо и другие поклонницы Carita вот уже много лет отдают предпочтение только ей. Сегодня французский бренд Carita представляет собой «ненавязчивый гламур» – утонченный, изысканный и простой. Эта профессиональная французская марка имеет большую гамму эффективных косметических средств по уходу за кожей и волосами, дающих результат с первых дней применения!</p>
+        </div><a href="#" class="link">www.carita.com</a>
+      </div>
+    </section>
+    <section id="modal_form" style="display: none;">
+      <div class="wrap_modal">
+        <form>
+          <div class="closer close_modal_form"></div>
+          <h3>Записаться в Celebrity spa</h3>
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="text" placeholder="Телефон" required>
+          <input type="text" placeholder="E-mail" required>
+          <button class="send">Отправить</button>
+          <button class="close_modal_form">Закрыть</button>
+        </form>
+      </div>
+    </section>
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/fancybox/source/jquery.fancybox.pack.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkS0y-j9aq7GAuQPJJy5uhEiVKIWBcTM4"></script>
     <script src="bundle.js"></script>
   </body>
 </html>

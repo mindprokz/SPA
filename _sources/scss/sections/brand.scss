@@ -1,0 +1,51 @@
+#brand {
+  position: relative;
+  background: #efe9e1;
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+#brand header {
+  position: relative;
+  overflow: hidden;
+  height: 85px;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+}
+
+#brand ul {
+  padding-top: 40px;
+
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+#brand ul li {
+  text-align: center;
+  width: 50%;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (min-width: 750px) {
+    width: 25%;
+  }
+
+  img {
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}

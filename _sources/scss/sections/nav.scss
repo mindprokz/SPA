@@ -158,7 +158,7 @@
   }
 
   @media (min-width: 750px) {
-    margin-right: 60px;
+    margin-right: 47px;
     margin-top: 22px;
   }
 }
@@ -240,7 +240,6 @@
     background: #f7f7f7;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 12px;
     min-height: auto;
     width: auto;
     display: block;
@@ -319,7 +318,8 @@
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
-  transition: color 0.3s ease;
+  border-bottom: 2px solid rgba($kaka, 0);
+  transition: color, border 0.3s, 0.3s ease, ease;
 
   @media (min-width: 1px) {
     width: 100%;
@@ -329,12 +329,13 @@
 
     &:hover {
       color: $dark_gray;
+      border-bottom: 2px solid rgba($kaka, 1);
     }
   }
 
   @media (min-width: 750px) {
     padding-top: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 32px;
     width: 14%;
     color: $dark_gray;
     font-size: 15px;

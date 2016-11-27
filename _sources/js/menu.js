@@ -16,6 +16,19 @@ export default function menuInit() {
     .addEventListener('click', () => {
       mobileOpener(true);
     });
+
+
+  $(document).on('click', '.anchor', function () {
+    $('html, body').animate({
+      scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top - 85
+    }, 1000 );
+
+    if ( menuHasOpen() ) {
+      menuClose();
+    }
+
+    return false;
+  });
 }
 
 function menuOpen() {
@@ -26,8 +39,11 @@ function menuClose() {
   document.querySelector('#menu footer').classList.remove('open');
 }
 
+function menuHasOpen() {
+  return document.querySelector('#menu footer').classList.contains('open');
+}
 
-// @event : bool -> Если функция самостоятельная передать true
+// @event : bool -> Если нужно так же закрыть меню сразу, передать true
 function mobileOpener(event) {
   let _elem = document.querySelector('#menu .mobile_menu_opener .burger');
 
