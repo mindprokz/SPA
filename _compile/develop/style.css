@@ -280,6 +280,7 @@ b {
 
 #menu footer {
   background: rgba(119, 66, 35, 0.9);
+  overflow: hidden;
   min-height: 100vh;
   display: table;
   width: 100%;
@@ -714,7 +715,7 @@ b {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 42px;
-        height: 42px;
+        height: 45px;
         background: url("images/sprite.png") no-repeat -122px 1px; }
       #services ul li .icon.mass::before {
         content: ' ';
@@ -723,7 +724,7 @@ b {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 42px;
-        height: 42px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -166px 0; }
       #services ul li .icon.serv::before {
         content: ' ';
@@ -732,7 +733,7 @@ b {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 42px;
-        height: 42px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -212px 0; }
       #services ul li .icon.app::before {
         content: ' ';
@@ -740,8 +741,8 @@ b {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 42px;
-        height: 42px;
+        width: 45px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -257px 0; }
       #services ul li .icon.face::before {
         content: ' ';
@@ -749,8 +750,8 @@ b {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 42px;
-        height: 42px;
+        width: 45px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -302px 0; }
       #services ul li .icon.aqua::before {
         content: ' ';
@@ -759,7 +760,7 @@ b {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 42px;
-        height: 42px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -347px 0; }
       #services ul li .icon.dep::before {
         content: ' ';
@@ -768,7 +769,7 @@ b {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 42px;
-        height: 42px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -393px 0; }
       #services ul li .icon.creo::before {
         content: ' ';
@@ -777,7 +778,7 @@ b {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 42px;
-        height: 42px;
+        height: 49px;
         background: url("images/sprite.png") no-repeat -439px 0; }
     #services ul li .text {
       float: left;
@@ -850,6 +851,63 @@ b {
       text-transform: uppercase;
       font-family: Lora, serif;
       padding-left: 0; }
+
+#stocks {
+  background: url("images/stock.jpg") no-repeat top center;
+  padding-top: 110px;
+  padding-bottom: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box; }
+
+#stocks .image_slide,
+#stocks .slides {
+  margin: 0 auto 10px;
+  position: relative;
+  overflow: hidden; }
+  @media (min-width: 1px) {
+    #stocks .image_slide,
+    #stocks .slides {
+      width: 100%; } }
+  @media (min-width: 970px) {
+    #stocks .image_slide,
+    #stocks .slides {
+      width: 775px; } }
+  @media (min-width: 1170px) {
+    #stocks .image_slide,
+    #stocks .slides {
+      width: 945px; } }
+  #stocks .image_slide img,
+  #stocks .slides img {
+    width: 100%; }
+  #stocks .image_slide .anim_img,
+  #stocks .slides .anim_img {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease; }
+    #stocks .image_slide .anim_img.open,
+    #stocks .slides .anim_img.open {
+      opacity: 0.5; }
+
+#stocks .slides .wrap {
+  height: 84px;
+  overflow: hidden; }
+
+#stocks .slides .slide {
+  width: 165px;
+  float: left;
+  margin: 10px 12px 0;
+  cursor: pointer; }
+  #stocks .slides .slide.active {
+    border-bottom: 3px solid #4d392e; }
+  #stocks .slides .slide:first-child {
+    margin-left: 0; }
+  #stocks .slides .slide:last-child {
+    margin-right: 0; }
+  #stocks .slides .slide img {
+    width: 100%; }
 
 #interior {
   position: relative;

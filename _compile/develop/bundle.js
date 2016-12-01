@@ -60,9 +60,14 @@
 
 	var _modal2 = _interopRequireDefault(_modal);
 
+	var _slider = __webpack_require__(5);
+
+	var _slider2 = _interopRequireDefault(_slider);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _menu2.default)();
+	(0, _slider2.default)();
 	(0, _map2.default)();
 	(0, _modal_form.modalInit)();
 	(0, _modal2.default)();
@@ -270,6 +275,77 @@
 	  setTimeout(function () {
 	    _modal.style.display = 'none';
 	  }, 300);
+	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = init;
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function init() {
+	  var _count = document.querySelectorAll('#stocks .slides .slide').length;
+	  var _width = document.querySelector('#stocks .slides .slide').clientWidth;
+	  var _calcValue = _count * _width + _count * 24 - 24 + 'px';
+
+	  document.querySelector('#stocks .slides .wrap').style.width = _calcValue;
+	  $(".slides").mCustomScrollbar({
+	    axis: "x",
+	    theme: 'dark'
+	  });
+
+	  [].concat(_toConsumableArray(document.querySelectorAll('#stocks .slides .slide'))).forEach(function (elem) {
+	    elem.addEventListener('click', function () {
+	      liActiveChange(this);
+	      changeStock(this);
+	    });
+	  });
+
+	  [].concat(_toConsumableArray(document.querySelectorAll('#stocks .slides .slide'))).forEach(function (elem) {
+	    elem.addEventListener('mouseenter', function () {
+	      animImgChange(this);
+	    });
+	  });
+
+	  [].concat(_toConsumableArray(document.querySelectorAll('#stocks .slides .slide'))).forEach(function (elem) {
+	    elem.addEventListener('mouseleave', function () {
+	      deactiveImgChange();
+	    });
+	  });
+	}
+
+	function changeStock(_elem) {
+	  var _src = _elem.children[0].src;
+
+	  document.querySelector('#stocks .image_slide img').src = _src;
+	}
+
+	function liActiveChange(_elem) {
+	  document.querySelector('#stocks .slides .slide.active').classList.remove('active');
+
+	  _elem.classList.add('active');
+	}
+
+	function animImgChange(_event_elem) {
+	  var _elem = document.querySelector('#stocks .image_slide .anim_img');
+	  var _src = _event_elem.children[0].src;
+
+	  _elem.src = _src;
+
+	  setTimeout(function () {
+	    document.querySelector('#stocks .image_slide .anim_img').classList.add('open');
+	  }, 200);
+	}
+
+	function deactiveImgChange() {
+	  document.querySelector('#stocks .image_slide .anim_img').classList.remove('open');
 	}
 
 /***/ }
