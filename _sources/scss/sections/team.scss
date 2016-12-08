@@ -23,8 +23,6 @@
 
 #team ul {
   padding-top: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
   padding-bottom: 35px;
 
   &::after {
@@ -86,6 +84,10 @@
       color: $kaka;
       font-size: 15px;
       font-weight: 700;
+
+      @media (max-width: 750px) {
+        font-size: 14px;
+      }
     }
   }
 }

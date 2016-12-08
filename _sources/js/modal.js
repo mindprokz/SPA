@@ -1,3 +1,5 @@
+import serv from './services'
+
 export default function initModal() {
   document.querySelector('#modal .wrap .closer')
     .addEventListener('click', () => {
@@ -6,17 +8,17 @@ export default function initModal() {
 
   // Услуги
   [...document.querySelectorAll('#services ul li')]
-    .forEach( (elem) => {
+    .forEach( (elem, num) => {
       elem.addEventListener('click', () => {
-        modalOpen();
+        modalChange(serv[num]);
       });
     });
 
   // бренд партнеры
-  [...document.querySelectorAll('#brand ul li img')]
+  [...document.querySelectorAll('#brand ul li')]
     .forEach( (elem) => {
-      elem.addEventListener('click', () => {
-        modalOpen();
+      elem.addEventListener('click', function () {
+        getQuery(this);
       });
     });
 }
@@ -42,4 +44,72 @@ function modalClose() {
 
   setTimeout( () => {
     _modal.style.display = 'none';
-  }, 300);}
+  }, 300);
+}
+
+/*
+  @elem : HTMLElement ->  do query on the server and get post
+*/
+function getQuery(elem) {
+  let link = elem.dataset.link;
+  $.get(`${link}&json=1`, function (data) {
+    let result = {};
+
+    if (data.post.type === 'brand') {
+      result.title = data.post.title;
+      result.content = 'wpcf-brand_content' in data.post.custom_fields ?
+        data.post.custom_fields['wpcf-brand_content'][0] : '';
+      result.footer = 'wpcf-brand_site' in data.post.custom_fields ?
+        data.post.custom_fields['wpcf-brand_site'][0] : '';
+    }
+
+    modalChange(result);
+  });
+}
+
+/*
+  @data : object -> abstract object which create in getQuery function
+*/
+function modalChange(data) {
+  let markup = '';
+  markup += headerModalMarkup(data.title);
+  markup += contentModalMarkup(data.content, data.image);
+  markup += footerModalMarkup(data.footer);
+
+  document.querySelector('#modal .wrap .content_query')
+    .innerHTML = markup;
+
+  $("#modal .wrap .content").mCustomScrollbar({
+    axis: "y",
+    theme: 'dark'
+  });
+
+  modalOpen();
+}
+
+
+/* markup functions */
+function headerModalMarkup(title) {
+  return `<h3>${title}</h3>`;
+}
+
+function contentModalMarkup(content, image) {
+ let markup = '<div class="content">';
+
+ if (image) {
+   markup += `<div class="image"><img src="${image}"></div>`;
+ }
+ markup += `<p>${content}</p>`;
+
+ return markup + '</div>';
+}
+
+function footerModalMarkup(link) {
+  let markup = '';
+
+  if (link) {
+    markup += `<a href="${link}" class="link">${link}</a>`
+  }
+
+  return markup;
+}

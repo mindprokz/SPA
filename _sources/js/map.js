@@ -1,11 +1,15 @@
 export default function () {
-  var myLatlng = new google.maps.LatLng(51.154388, 71.441285);
-	var myCenterMarker = new google.maps.LatLng(51.154310, 71.450293);
+  var myLatlng = new google.maps.LatLng(51.128906, 71.406683);
+	var myCenterMarker = new google.maps.LatLng(51.128906, 71.406683);
 	var myOptions = {
     scrollwheel: false,
 		zoom: 15,
 		center: myLatlng,
 		disableDefaultUI: true,
+    zoomControl: true,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_CENTER,
+    },
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
 

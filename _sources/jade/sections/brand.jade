@@ -1,13 +1,23 @@
+| <?php 
+|   $args = array(
+|     'post_type' => 'brand', //Тип поста
+|     'posts_per_page' => -1,//Постов на одной странице
+|     'category_name' => 'uncategorized' //Категория постов
+|   );
+|   $lastBlog = new WP_Query($args);
+| ?>
 section#brand
   a(name="partners")
   header
     img(src="images/header_brand.png")
   ul
-    li
-      img(src="images/test_logo.png")
-    li
-      img(src="images/test_logo.png")
-    li
-      img(src="images/test_logo.png")
-    li
-      img(src="images/test_logo.png")
+    | <?php
+    |  if( $lastBlog->have_posts() ):
+    |    while($lastBlog->have_posts() ): $lastBlog->the_post();
+    |      $logo = types_render_field( "brand_logo", array('output' => 'raw') )?>
+    li(data-link!="<?php echo get_permalink(); ?>")
+      img(src!="<?php echo $logo; ?>")
+    | <?php 
+    |     endwhile;
+    |   endif;
+    | ?>

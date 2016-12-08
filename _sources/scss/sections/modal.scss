@@ -33,6 +33,20 @@
     transform: translate(-50%, -50%);
   }
 
+  img {
+    display: block;
+    width: 40%;
+    height: auto;
+    margin: auto;
+
+    @media (min-width: 750px) {
+      width: auto;
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
   @media (min-width: 750px) {
     width: 650px;
     padding-left: 60px;
@@ -81,6 +95,15 @@
   margin: auto;
   margin-bottom: 25px;
   overflow: hidden;
+  position: relative;
+
+  img {
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   @media (min-width: 750px) {
     float: left;
@@ -95,6 +118,10 @@
   font-size: 16px;
   line-height: 20px;
   text-align: justify;
+
+  img {
+    vertical-align: top;
+  }
 }
 
 #modal .wrap .link {

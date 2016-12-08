@@ -10,3 +10,13 @@ initSlider();
 map();
 modalInit();
 initModal();
+
+// fancybox
+$(".fancybox").click(function() {
+	$(".fancybox").fancybox({
+		openEffect: 'fade',
+		closeEffect: 'fade'
+	});
+});
+
+document.querySelector('#stocks .image_slide img').src = document.querySelector('#stocks .slides .slide img').src;

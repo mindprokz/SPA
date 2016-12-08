@@ -1,32 +1,26 @@
+| <?php 
+|   $args = array(
+|     'post_type' => 'interior', //Тип поста
+|     'posts_per_page' => -1,//Постов на одной странице
+|     'category_name' => 'uncategorized' //Категория постов
+|   );
+|   $lastBlog = new WP_Query($args);
+|   $sizeThumb = 'big';
+| ?>
 section#interior
   a(name="interior")
   header
     img(src="images/header_interier.png")
   .wrap
-    a(href="#").image_interior_wrap.big
-      .image_interior(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
+    | <?php
+    |  if( $lastBlog->have_posts() ):
+    |    while($lastBlog->have_posts() ): $lastBlog->the_post();
+    |      $thumbImage =  types_render_field( "interior_photo", array('output' => 'raw') ) ?>
+    a(href!="<?php echo $thumbImage; ?>" rel="interior" class!="<?php echo $sizeThumb; ?>").fancybox.image_interior_wrap
+      .image_interior(style!="background: url('<?php echo $thumbImage; ?>') no-repeat center center; background-size: cover;")
         .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
-    a(href="#").image_interior_wrap
-      .image_interior.big(style="background: url('images/interior/1.jpg') no-repeat center center; background-size: cover;")
-      .zoom
+    | <?php 
+    |       $sizeThumb = '';
+    |     endwhile;
+    |   endif;
+    | ?>

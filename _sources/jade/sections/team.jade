@@ -1,34 +1,31 @@
+| <?php 
+|   $args = array(
+|     'post_type' => 'team', //Тип поста
+|     'posts_per_page' => -1,//Постов на одной странице
+|     'category_name' => 'uncategorized' //Категория постов
+|   );
+|   $lastBlog = new WP_Query($args);
+| ?>
 section#team
   a(name="team")
   .wrap
     header
       img(src="images/header_team.png")
     ul
+      | <?php
+      |  if( $lastBlog->have_posts() ):
+      |    while($lastBlog->have_posts() ): $lastBlog->the_post();
+      |      $name = types_render_field( "team_name", array('output' => 'raw') );
+      |      $status = types_render_field( "team_status", array('output' => 'raw') );
+      |      $avatar = types_render_field( "team_photo", array('output' => 'raw') ) ?>
       li
         .wrap
           .avatar
-            img(src="images/ava_test.jpg")
+            img(src!="<?php echo $avatar; ?>")
           .text
-            h4 Эстет по телу
-            h5 Махамбетов Диас
-      li
-        .wrap
-          .avatar
-            img(src="images/ava_test.jpg")
-          .text
-            h4 Эстет по телу
-            h5 Махамбетов Диас
-      li
-        .wrap
-          .avatar
-            img(src="images/ava_test.jpg")
-          .text
-            h4 Эстет по телу
-            h5 Махамбетов Диас
-      li
-        .wrap
-          .avatar
-            img(src="images/ava_test.jpg")
-          .text
-            h4 Эстет по телу
-            h5 Махамбетов Диас
+            h4!="<?php echo $status; ?>"
+            h5!="<?php echo $name;?>"
+      | <?php 
+      |     endwhile;
+      |   endif;
+      | ?>
