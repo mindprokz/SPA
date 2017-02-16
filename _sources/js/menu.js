@@ -1,26 +1,15 @@
 export default function menuInit() {
 
-  document.querySelector('#menu .menu_opener')
-    .addEventListener('click', () => {
-      menuOpen();
-      mobileOpener();
-    });
-
-  document.querySelector('#menu .menu_closer')
-    .addEventListener('click', () => {
-      menuClose();
-      mobileOpener();
-    });
-
   document.querySelector('#menu .mobile_menu_opener .burger')
     .addEventListener('click', () => {
       mobileOpener(true);
     });
 
 
-  $(document).on('click', '.anchor', function () {
+  $(document).on('click', '.anchor', function (e) {
+    e.preventDefault();
     $('html, body').animate({
-      scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top - 85
+      scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top - 105
     }, 1000 );
 
     if ( menuHasOpen() ) {

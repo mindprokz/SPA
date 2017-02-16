@@ -112,7 +112,12 @@
   }
 }
 
-#modal .wrap p {
+#modal .wrap .content_modal {
+  padding-left: 170px;
+}
+
+#modal .wrap p,
+#modal .wrap li {
   color: $kaka;
   font-family: 'Open Sans', serif;
   font-size: 16px;

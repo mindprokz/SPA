@@ -158,7 +158,7 @@ gulp.task('js', () => {
     .pipe(jshint.reporter('default'))
     .pipe(webpackStream(webpackOptions))
     .pipe(uglify())
-    .pipe(rename('bundle.min.js'))
+    .pipe(rename('bundle.js'))
     .pipe(gulp.dest(jsPath.to));
 
   }

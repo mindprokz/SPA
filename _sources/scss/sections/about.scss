@@ -56,7 +56,7 @@
   }
 
   &.row_1 .image {
-    background: url('images/about_1.jpg') no-repeat center center;
+    background: url('images/about_3.jpg') no-repeat center center;
   }
 
   &.row_1 .text {
@@ -75,11 +75,11 @@
   }
 
   &.row_3 .image {
-    background: url('images/about_3.jpg') no-repeat center center;
+    background: url('images/about_1.jpg') no-repeat center center;
   }
 
   &.row_3 .text {
-    background: #d7b56d;
+    background: $invert_kaka;
     height: 100%;
   }
 }
@@ -100,12 +100,11 @@
     padding-right: 15px;
     padding-top: 30px;
     font-size: 14px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
 
   @media (min-width: 750px) {
     font-size: 20px;
-    padding-bottom: 20px;
   }
 
   @media (min-width: 1170px) {
@@ -113,7 +112,6 @@
     padding-left: 0;
     padding-right: 0;
     font-size: 25px;
-    padding-bottom: 45px;
   }
 
   @media (min-width: 1560px) {

@@ -73,7 +73,8 @@
 
 #map footer {
   height: 95px;
-  background: #d6b66d;
+  background: $invert_kaka;
+  background-size: cover;
   font-family: 'Open Sans', serif;
   padding-left: 15px;
   padding-right: 15px;

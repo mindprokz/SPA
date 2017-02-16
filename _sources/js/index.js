@@ -18,5 +18,5 @@ $(".fancybox").click(function() {
 		closeEffect: 'fade'
 	});
 });
-
+ 
 document.querySelector('#stocks .image_slide img').src = document.querySelector('#stocks .slides .slide img').src;

@@ -49,54 +49,6 @@
   }
 }
 
-#menu .menu_opener {
-  float: right;
-  height: 56px;
-  padding-right: 15px;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-top: 15px;
-  border-left: 1px solid $gray_line;
-  padding-left: 18px;
-  position: relative;
-  display: none;
-
-  .burger {
-    background: url($sprite) no-repeat 0 -36px;
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin-left: 25px;
-    margin-top: 15px;
-  }
-
-  span {
-    float: left;
-    margin-top: 20px;
-  }
-
-  .back {
-    background: rgba($gray_line, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    z-index: -1;
-    transition: width 0.3s ease;
-  }
-
-  &:hover {
-    .back {
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 970px) {
-    display: block;
-  }
-}
-
 #menu .mobile_menu_opener {
   float: right;
   cursor: pointer;
@@ -220,9 +172,6 @@
   min-height: 100vh;
   display: table;
   width: 100%;
-  transform: translateY(-100%);
-  opacity: 0;
-  height: 0;
   transition: transform, opacity 0.3s, 0.2s ease, ease;
 
   &.open {
@@ -244,6 +193,12 @@
     min-height: auto;
     width: auto;
     display: block;
+  }
+
+  @media (max-width: 970px) {
+    transform: translateY(-100%);
+    opacity: 0;
+    height: 0;
   }
 }
 
@@ -314,7 +269,7 @@
 }
 
 #menu footer a {
-  float: left;
+  display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -336,7 +291,7 @@
 
   @media (min-width: 750px) {
     padding-top: 15px;
-    padding-bottom: 32px;
+    padding-bottom: 15px;
     width: 14%;
     color: $dark_gray;
     font-size: 15px;
@@ -344,10 +299,5 @@
     &:hover {
       color: $kaka;
     }
-  }
-
-  @media (min-width: 970px) {
-    padding-top: 34px;
-    width: 12%;
   }
 }

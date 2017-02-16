@@ -108,7 +108,7 @@ function footerModalMarkup(link) {
   let markup = '';
 
   if (link) {
-    markup += `<a href="${link}" class="link">${link}</a>`
+    markup += `<a href="${link}" target="_blank" class="link">${link}</a>`
   }
 
   return markup;

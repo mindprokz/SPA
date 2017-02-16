@@ -3,7 +3,7 @@
   padding-top: 30px;
 
   @media (min-width: 750px) {
-    background: url('images/services.jpg') no-repeat center top;
+    background: url('images/services.jpg') no-repeat center center;
   }
 }
 
@@ -47,10 +47,6 @@
 
     &:hover {
       background: #7e3f1b;
-
-      .icon {
-        background: #dfb963;
-      }
     }
 
     @media (min-width: 750px) {
@@ -61,7 +57,7 @@
     .icon {
       width: 51px;
       height: 51px;
-      background: #d7b56d;
+      background: $invert_kaka;
       position: relative;
       float: left;
       transition: background 0.3s ease;
