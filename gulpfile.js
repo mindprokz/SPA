@@ -35,8 +35,8 @@ gulp.task('server', () => {
   // Если переменная окружения задана, то делаем сборку под продакшн
   if (env === 'develop') {
     bs.init({
-      //server : `./_compile/${env}/`,
-      proxy: 'localhost'
+      server : `./_compile/${env}/`,
+      //proxy: 'localhost'
     })
   }
 
@@ -60,7 +60,7 @@ let webpackOptions = {
 class CreatePath {
   constructor (from, to) {
     this.from = __dirname +  from;
-    this.to = to === undefined ? `/Users/merrick/Desktop/Server/wp-content/themes/spa/` :  __dirname + to;
+    this.to = to === undefined ? __dirname + `/_compile/${env}/` :  __dirname + to;
   }
 }
 

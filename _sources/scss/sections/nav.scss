@@ -9,13 +9,20 @@
   height: 0;
 }
 
+#menu .wrap {
+  position: relative;
+
+  @media (max-width: 750px) {
+    height: 55px;
+  }
+}
 // Menu Top Start
 
 #menu header {
   height: 55px;
   padding-left: 15px;
   padding-right: 15px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
   z-index: 2;
   position: relative;
 
@@ -24,13 +31,12 @@
   }
 
   .logo {
-    background: url('images/logo.png') no-repeat;
-    float: left;
-
     @media (min-width: 1px) {
       width: 103px;
       height: 30px;
+      background: url('images/logo.png') no-repeat;
       margin-top: 10px;
+      float: left;
       background-position: -375px 0;
     }
 
@@ -42,9 +48,25 @@
     }
 
     @media (min-width: 970px) {
-      width: 205px;
-      height: 57px;
+      width: 382px;
+      height: 106px;
+      background: url('images/logo_main.png') no-repeat;
       background-position: 0 0;
+      position: absolute;
+      top: 13px;
+      left: -40px;
+      transform: scale(0.6);
+    }
+
+    @media (min-width: 1170px) {
+      width: 382px;
+      height: 106px;
+      background: url('images/logo_main.png') no-repeat;
+      background-position: 0 0;
+      position: absolute;
+      top: 11px;
+      left: 30px;
+      transform: scale(1);
     }
   }
 }
@@ -154,7 +176,7 @@
     display: none;
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 970px) {
     display: block;
   }
 
@@ -167,7 +189,7 @@
 
 // List Nav start
 #menu footer {
-  background: rgba($kaka, 0.9);
+  background: rgba(156, 118, 86, 0.8);
   overflow: hidden;
   min-height: 100vh;
   display: table;
@@ -187,7 +209,7 @@
   }
 
   @media (min-width: 750px) {
-    background: #f7f7f7;
+    background: rgba(156, 118, 86, 0.8);
     padding-left: 15px;
     padding-right: 15px;
     min-height: auto;
@@ -209,7 +231,7 @@
 
   @media (min-width: 750px) {
     display: block;
-    text-align: left;
+    text-align: right;
   }
 
   &::after {
@@ -285,19 +307,19 @@
 
     &:hover {
       color: $dark_gray;
-      border-bottom: 2px solid rgba($kaka, 1);
+      border-bottom: 2px solid #fff;
     }
   }
 
   @media (min-width: 750px) {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 14%;
-    color: $dark_gray;
-    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 10%;
+    color: #fff;
+    font-size: 12px;
 
     &:hover {
-      color: $kaka;
+      color: #ececec;
     }
   }
 }

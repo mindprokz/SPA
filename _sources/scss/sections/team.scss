@@ -34,7 +34,7 @@
 
 #team ul li {
   float: left;
-  height: 80px;
+  height: 90px;
   padding: 5px;
   box-sizing: border-box;
 
@@ -68,6 +68,17 @@
     overflow: hidden;
     float: left;
     margin-right: 10px;
+    transition: width 0.3s ease, height 0.3s ease;
+
+    &:hover {
+      width: 80px;
+      height: 80px;
+    }
+
+    img {
+      width: 100%;
+      transition: all 0.3s ease;
+    }
   }
 
   .text {

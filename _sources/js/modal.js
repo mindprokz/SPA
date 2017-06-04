@@ -73,8 +73,8 @@ function getQuery(elem) {
 function modalChange(data) {
   let markup = '';
   markup += headerModalMarkup(data.title);
-  markup += contentModalMarkup(data.content, data.image);
   markup += footerModalMarkup(data.footer);
+  markup += contentModalMarkup(data.content, data.image);
 
   document.querySelector('#modal .wrap .content_query')
     .innerHTML = markup;
